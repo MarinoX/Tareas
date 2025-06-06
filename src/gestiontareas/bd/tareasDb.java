@@ -20,6 +20,11 @@ public class tareasDb {
     private Connection con;
     private PreparedStatement ps;
     
+     /*
+    * SE IMPLEMENTAron TRES METODOS PARA REGISTRAR,MODIFICAR Y BUSCAR TAREAS
+    *
+    */
+    
     public boolean RegistrarTarea(Tarea t){
         con = conexion.conn();
         
@@ -54,6 +59,7 @@ public class tareasDb {
     }
     }
     
+   
     
     public boolean ModificarTarea(Tarea t){
         con = conexion.conn();
@@ -87,6 +93,11 @@ public class tareasDb {
         }
     }
     }
+    
+     /*
+    * EL USO DEL METODO BUSCAR TAREA POR ID SE USA PARA LLAMAR LA DATA DE MODIFICAR
+    *
+    */
     
     public Tarea BuscarTareaPorId(int id) {
     con = conexion.conn();

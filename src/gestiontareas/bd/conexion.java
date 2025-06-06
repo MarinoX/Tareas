@@ -13,6 +13,11 @@ import java.sql.SQLException;
  *
  * @author joms_
  */
+
+ /*
+    * CONEXION CON LA DB
+    *
+    */
 public class conexion {
    private static final String url = "jdbc:mysql://localhost:3306/tareas";
    private static final String user = "admin";

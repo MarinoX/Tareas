@@ -27,6 +27,11 @@ public class Tarea {
         this.limite = limite;
     }
 
+     /*
+    * GETTERS, SETTERS Y ARRIBA LOS CONSTRUCTORES
+    *
+    */
+    
     public int getId() {
         return id;
     }

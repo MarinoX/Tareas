@@ -78,7 +78,10 @@ public class principal extends javax.swing.JFrame {
     }
 }
 
-    
+     /*
+    * DOS METODOS PARA LIMPIAR CAMPOS ,HABRIA HECHO UNO PERO SOY WEY
+    *
+    */
     private void limpiarCamposModificar() {
     txtId.setText("");
     txtNombreM.setText("");
@@ -622,6 +625,11 @@ public class principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     /*
+    * 4 DE ESTOS METODOS SON USADOS PARA AL DARLE AL BOTON LOS META AL PANEL ELEGIDO EN EL ESPACIO DEL PANEL CONTENEDOR
+    *
+    */
+    
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         cargarTareas();
@@ -647,7 +655,7 @@ public class principal extends javax.swing.JFrame {
             tarea.setLimite(fechaLimite);
         } catch (DateTimeParseException e) {
             JOptionPane.showMessageDialog(null, "Formato de fecha inválido. Usa yyyy-MM-dd");
-            return;  // Para evitar continuar si la fecha es incorrecta
+            return;
         }
         tarea.setStatus(comboEstado.getSelectedItem().toString());
         tareasDb tareasDb = new tareasDb();
@@ -710,12 +718,12 @@ public class principal extends javax.swing.JFrame {
     private void btnModificarTareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarTareaActionPerformed
         // TODO add your handling code here:
          Tarea tarea = new Tarea();
-    tarea.setId(Integer.parseInt(txtId.getText())); // ID a modificar
+    tarea.setId(Integer.parseInt(txtId.getText()));
     tarea.setNombre(txtNombreM.getText());
     tarea.setDescripcion(txtDescripcionM.getText());
     try {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    String fechaTexto = txtFechaM.getText().trim();  // <-- quitamos espacios
+    String fechaTexto = txtFechaM.getText().trim();
     LocalDate fechaLimite = LocalDate.parse(fechaTexto, formatter);
     tarea.setLimite(fechaLimite);
 } catch (DateTimeParseException e) {
@@ -734,6 +742,11 @@ public class principal extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnModificarTareaActionPerformed
 
+     /*
+    * BOTON DE BUSCAR DONDE SE "BUSCA" xd LA DATA
+    *
+    */
+    
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         int id = Integer.parseInt(txtId.getText());
@@ -764,6 +777,10 @@ public class principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+     /*
+    * METODOS VACIOS YA QUE EL FILTRO NO JALO A TIEMPO Y LOS BORRE XD
+    *
+    */
     private void comboEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEstadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboEstadoActionPerformed
